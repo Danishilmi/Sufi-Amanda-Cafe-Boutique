@@ -104,6 +104,14 @@ legend { font-size: .85rem; font-weight: 600; padding: 0 .3rem; }
 .preview { max-width: 140px; border-radius: 8px; }
 
 .login { min-height: 100vh; display: grid; place-items: center; padding: 1rem; }
+/* password field with show/hide eye button on the right */
+.pw-field { position: relative; display: block; }
+.pw-field input { padding-right: 2.75rem; }
+.pw-toggle { position: absolute; top: 50%; right: .25rem; transform: translateY(-50%); display: grid; place-items: center; width: 2rem; height: 2rem; padding: 0; border: 0; border-radius: 6px; background: transparent; color: var(--muted); cursor: pointer; }
+.pw-toggle:hover { color: var(--accent-text); background: var(--accent-soft); }
+.pw-toggle:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 1px; }
+.pw-toggle .eye-off, .pw-toggle[aria-pressed="true"] .eye-open { display: none; }
+.pw-toggle[aria-pressed="true"] .eye-off { display: block; }
 .card-box { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem; width: min(360px, 100%); }
 .tabs { display: flex; gap: .25rem; padding: 0 1rem; background: var(--surface); border-bottom: 1px solid var(--line); overflow-x: auto; }
 .tabs button { background: none; border: 0; border-bottom: 2px solid transparent; padding: .75rem .9rem; font: inherit; cursor: pointer; color: var(--muted); white-space: nowrap; }
