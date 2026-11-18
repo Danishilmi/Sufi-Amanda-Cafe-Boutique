@@ -22,6 +22,16 @@ const sapi = (path, opts = {}) => api(path, { ...opts, token }).catch((err) => {
 });
 
 // ---------- login ----------
+// eye button: show or hide the password
+document.getElementById('pwToggle').addEventListener('click', (e) => {
+  const btn = e.currentTarget, input = document.getElementById('password');
+  const show = input.type === 'password';
+  input.type = show ? 'text' : 'password';
+  btn.setAttribute('aria-pressed', String(show));
+  btn.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+  btn.title = btn.getAttribute('aria-label');
+  input.focus();
+});
 function showLogin() {
   token = null;
   try { sessionStorage.removeItem(TOKEN_KEY); } catch {}
